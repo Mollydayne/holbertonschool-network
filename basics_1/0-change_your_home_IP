@@ -5,5 +5,5 @@ cp /etc/hosts /etc/hosts.backup
 echo -n > /etc/hosts
 # changin localhost adress
 echo "127.0.0.1 localhost" >> /etc/hosts
-# change facebook adress
+# change facebook.com adress
 echo "8.8.8.8 facebook.com" >> /etc/hosts
