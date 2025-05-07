@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Script to listen to port
+# script that displays listening ports
 
-ss -tunlp
+netstat -tulp
+netstat -lxp
