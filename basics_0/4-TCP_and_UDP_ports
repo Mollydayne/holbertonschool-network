@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Script to listen to port
-netstat -tulp
-netstat -lxp
+sudo netstat -tulnp
