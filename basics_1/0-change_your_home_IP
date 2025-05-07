@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# saving file in hosts in hosts.backup
+cp /etc/hosts /etc/hosts.backup
+# delete whats on initial
+echo -n > /etc/hosts
+# changin localhost adress
+echo "127.0.0.1 localhost" >> /etc/hosts
+# change facebook adress
+echo "8.8.8.8 facebook.com" >> /etc/hosts
