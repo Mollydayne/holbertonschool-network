@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# saving file in hosts in hosts.backup
+# script that configures an Ubuntu server with the below requirements
 cp /etc/hosts /etc/hosts.backup
 # delete whats on initial
 echo -n > /etc/hosts
