@@ -1,0 +1,55 @@
+                  +------------------+
+                  |      Browser     |
+                  +------------------+
+                           |
+          1. You type "https://www.google.com"
+                           v
+                  +------------------+
+                  |   DNS Resolver   |
+                  |   google.com →   |
+                  | 142.250.190.4    |
+                  +------------------+
+                           |
+           2. DNS resolves domain to IP
+                           v
+                  +------------------+
+                  |     Firewall     |
+                  | Allows TCP/443   |
+                  +------------------+
+                           |
+            3. HTTPS Request on port 443
+                           v
+                  +------------------+
+                  |  Load Balancer   |
+                  |   (e.g., HAProxy)|
+                  +------------------+
+                   |              |
+          4a.      |              |     4b.
+                   v              v
+           +----------------+  +----------------+
+           |   Web Server   |  |   Web Server   |
+           |    Nginx       |  |    Nginx       |
+           +----------------+  +----------------+
+                   |              |
+           5. Forwards request to Application Server
+                   v              v
+           +----------------+  +----------------+
+           |  App Server    |  |  App Server    |
+           |  Logic Engine  |  |  Logic Engine  |
+           +----------------+  +----------------+
+                   |              |
+           6. Queries Database for Data
+                   v              v
+           +----------------------------+
+           |         Database           |
+           | (User Info, Doodles, etc.) |
+           +----------------------------+
+                           |
+           7. App Server generates HTML
+                           |
+           8. Web Server responds via HTTPS
+                           |
+                  +------------------+
+                  |     Browser      |
+                  | Renders the Page |
+                  +------------------+

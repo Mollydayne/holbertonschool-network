@@ -1,0 +1,77 @@
+# What Happens When You Type `https://www.google.com` and Press Enter?
+
+Imagine you’re entering a bustling gourmet restaurant named **Google**. You walk in (type the URL) and everything starts moving behind the scenes to bring your digital dish to the table. Let’s step into the kitchen and uncover what happens backstage the moment you press **Enter**.
+
+---
+
+## 1. DNS: The Restaurant Directory
+
+Your browser doesn’t know the exact address of the "Google restaurant" yet. So it first checks its local notes (cache). If it finds nothing, it asks the DNS, like checking a phone book, to resolve `www.google.com` into a precise IP address, much like finding the exact street address of your favorite bistro.
+
+Eventually, DNS replies with something like `142.250.190.4` — voilà, we now know where to go.
+
+---
+
+## 2. TCP/IP: Setting Up the Table
+
+Now that we know where to send the request, the browser calls the waiter (TCP) to establish a reliable connection to the address. TCP handles the three-way handshake : a polite greeting like:
+- "Hey, can I talk to the server?" (SYN)
+- "Sure, I’m here" (SYN-ACK)
+- "Great, let’s talk" (ACK)
+
+Once the table is set, our message can begin its journey through the web’s many roads, thanks to IP (like GPS for data packets).
+
+---
+
+## 3. HTTPS/SSL: Cooking in a Sealed Kitchen
+
+This isn’t a street food stand — it's fine dining, so security matters. Before any real conversation happens, your browser and the server agree on a secret recipe (SSL handshake). It’s like locking the kitchen door and whispering only in code, no eavesdropping allowed.
+
+Thanks to HTTPS, all communication from here is encrypted. The chef won’t tell anyone your order, and no one can tamper with the dish.
+
+---
+
+## 4. Firewall: The Bouncer at the Door
+
+As the request arrives at Google’s kitchen, it must pass a bouncer (the firewall). This bouncer checks all visitors and only allows traffic on specific ports, in our case, **TCP/443**, reserved for HTTPS.
+
+No reservation on the right port? Access denied.
+
+---
+
+## 5. Load-Balancer: The Head Waiter
+
+Now that we’re in, the head waiter (load balancer) decides which kitchen (web server) should take care of your order. Google has many kitchens running in parallel, this ensures your dish comes out fast, even during the lunch rush.
+
+The load balancer picks the least busy chef and sends your request their way.
+
+---
+
+## 6. Web Server: Receiving the Order
+
+The web server is the one taking your order, it receives your request and starts prepping. But often, the web server doesn’t cook the dish itself. Instead, it forwards the request to the **application server**, which is where the real culinary magic happens.
+
+---
+
+## 7. Application Server: The Master Chef
+
+The application server grabs your order, checks what you need, and decides how to prepare it. This is the heart of the kitchen, where logic and recipes live.
+
+To serve the dish (your Google homepage), the app server might need to gather ingredients…
+
+---
+
+## 8. Database: The Pantry
+
+The database is the well-organized pantry. The application server asks, “What’s the user’s preferred language? Are they logged in? What’s today’s doodle?” The database fetches all the right ingredients.
+
+Only then can the application server fully prepare your custom-made webpage.
+
+---
+
+## 🍰 Bon Appétit
+
+Once everything’s cooked, the web server serves the final dish to your browser — beautifully rendered and tailored for you. All this happens in a blink of an eye, every time you press `Enter`.
+
+The internet is one magnificent kitchen — and now, you know exactly how your digital meal is prepared.
+
